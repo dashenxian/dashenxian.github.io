@@ -33,4 +33,4 @@ oracle执行update没有带where条件，造成全表更新。
 
 **参考资料**
 
-- [wpf - Custom dwm drawn window frame flickers on resizing if the window contains a HwndHost element - Stack Overflow](https://blog.csdn.net/l_s_r/article/details/108511501)
+- [oracle误操作（update）数据后怎么恢复到之前--超详细](https://blog.csdn.net/l_s_r/article/details/108511501)
