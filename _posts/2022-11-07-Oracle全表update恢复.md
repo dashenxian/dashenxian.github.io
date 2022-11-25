@@ -18,6 +18,7 @@ oracle执行update没有带where条件，造成全表更新。
 
 ## 解决
 
+```sql
 1.select * from V$SQL where SQL_TEXT like '%%'--根据修改语句查出你需要恢复的时间点
 
 2.create table new_table as select * from table as of timestamp to_timestamp('2020-09-10 11:44:25','yyyy-mm-dd            hh24:mi:ss');
@@ -27,7 +28,7 @@ oracle执行update没有带where条件，造成全表更新。
 3.delete table ;--将原表的数据全部删除
 
 4.insert into table select * from new_table ;--把恢复的数据保存到原表。
-
+```
 
 ---
 
