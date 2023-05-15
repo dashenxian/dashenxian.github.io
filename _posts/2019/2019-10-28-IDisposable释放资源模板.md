@@ -1,7 +1,7 @@
 ---
 title: "IDisposable释放资源模板"
 publishDate: 2019-10-28 19:46:53 +0800
-date: 2019-10-28 19:46:53 +0800
+date: 2023-05-15 14:46:53 +0800
 categories: IDisposable释放资源模板
 position: template
 ---
@@ -23,7 +23,7 @@ public class FatherClass : IDisposable
     {
         Dispose(false);
     }
-    protected virtual Dispose(bool isDisposing)
+    protected virtual void Dispose(bool isDisposing)
     {
         if (isDisposed) return;
         if (isDisposing)
@@ -46,10 +46,12 @@ public class ChildClass : FatherClass
     private bool isDisposed = false;
     protected override void Dispose(bool isDisposing)
     {
-        if (isDisposed) return; if (isDisposing)
+        if (isDisposed) return; 
+        if (isDisposing)
         {
             // 释放托管资源。 
         }
+        // 释放非托管资源。 
         base.Dispose(isDisposing);
         isDisposed = true;
     }
